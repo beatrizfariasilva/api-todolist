@@ -1,5 +1,5 @@
 
-const BASE_URL = "https://api-todolist-846s.onrender.com";
+const BASE_URL = "https://api-todolist-846s.onrender.com/tarefas";
 
 const form = document.getElementById("form-tarefa");
 const input = document.getElementById("tarefa");
@@ -111,6 +111,10 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   adicionarTarefa(input.value);
 });
+
+// Clique no botão + também adiciona a tarefa
+const btnAdd = document.getElementById("btn-add");
+btnAdd.addEventListener("click", () => adicionarTarefa(input.value));
 
 filtros.forEach(btn => {
   btn.addEventListener("click", () => {
